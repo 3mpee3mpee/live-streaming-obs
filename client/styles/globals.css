@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.video-player {
+  display: block;
+  margin: 0 auto;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.messages-container {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+  margin: 0;
+}
+
+input[type="text"] {
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  flex-grow: 1;
+}
+
+button[type="submit"] {
+  font-size: 14px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #6441a5;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #5a369a;
+}
+
+p {
+  color: black;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    width: 100%;
+    margin-right: 10px;
+    align-self: flex-end;
+  }
+
+  .video-container {
+    margin: 0 auto;
+    display: block;
+  }
+}
