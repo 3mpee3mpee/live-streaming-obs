@@ -32,7 +32,7 @@ export default function Stream() {
             <div className='video-container'>
                 <div className='video-player'>
                     <ReactPlayer
-                    url='http://localhost:8000/live/3mpee.flv'
+                    url={process.env.STREAMING_SERVER}
                     playing
                     controls
                     width='50%'

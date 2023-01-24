@@ -14,7 +14,8 @@ const Chat = () => {
     const [socket, setSocket] = useState<Socket>();
 
     useEffect(() => {
-        let socket = io('http://localhost:5000');
+        const chatServer = process.env.CHAT_SERVER || 'http://localhost:8000/live/{USERNAME}.flv';
+        let socket = io(chatServer);
         setSocket(socket);
     }, [])
 

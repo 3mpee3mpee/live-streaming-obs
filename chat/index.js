@@ -1,11 +1,12 @@
 const express = require('express');
+require('dotenv').config();
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: process.env.CLIENT_HOST,
         methods: ["GET", "POST"]
     }
 });
@@ -27,6 +28,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(5000, () => {
+server.listen(process.env.CHAT_PORT, () => {
   console.log('listening on *:5000');
 });
